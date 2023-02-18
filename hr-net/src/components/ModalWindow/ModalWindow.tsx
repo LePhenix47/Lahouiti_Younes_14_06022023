@@ -1,4 +1,5 @@
 //React
+import { log } from "@/react-utils/functions/helper-functions";
 import React, { Dispatch, SetStateAction, useRef, useState } from "react";
 
 /**
@@ -20,7 +21,10 @@ export default function ModalWindow({
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 }): JSX.Element {
-  const dialogRef = useRef(null);
+  const dialogRef: React.MutableRefObject<null> = useRef(null);
+
+  //@ts-ignore
+  const openedOnlyOnce: boolean = !dialogRef?.current?.attributes.open;
 
   function closeModal() {
     //@ts-ignore
@@ -28,9 +32,14 @@ export default function ModalWindow({
     setIsOpen(false);
   }
 
+  if (isOpen && openedOnlyOnce) {
+    //@ts-ignore
+    dialogRef?.current?.showModal();
+  }
+
   return (
     //Because the "open" attribute doesn't
-    <dialog className="modal-window" ref={dialogRef} open={isOpen}>
+    <dialog className="modal-window" ref={dialogRef}>
       <button
         className="modal-window__close-button"
         onClick={() => {

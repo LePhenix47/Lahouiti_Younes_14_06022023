@@ -63,16 +63,15 @@ export default function Home(): JSX.Element {
         <link rel="icon" type="image/png" href="/HRnet-logo.svg" />
       </Head>
 
+      <ModalWindow
+        content={<ModalContent />}
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+      />
       <section className="home-page">
         <h1 className="home-page__title">HRnet</h1>
 
         <h2 className="home-page__subtitle">Add employee</h2>
-
-        <ModalWindow
-          content={<ModalContent />}
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}
-        />
 
         <form
           className="home-page__form"

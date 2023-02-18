@@ -1,8 +1,12 @@
 @use "../utils/" as *;
 
 .modal-window {
+    translate: -50% -50%;
+    inset: 50%;
 
-    &::backdrop {}
+    &::backdrop {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
 
     &__close-button {}
 
