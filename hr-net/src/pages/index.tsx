@@ -1,5 +1,5 @@
 //Next
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 //Next
 import Head from "next/head";
@@ -13,6 +13,7 @@ import { departments } from "@/react-utils/variables/departments";
 import DatePicker from "@/components/DatePicker/DatePicker";
 import SelectDropdown from "@/components/SelectDropdown/SelectDropdown";
 import ModalWindow from "@/components/ModalWindow/ModalWindow";
+import ModalContent from "@/components/ModalContent/ModalContent";
 
 /**
  * Home page: `/`
@@ -59,7 +60,7 @@ export default function Home(): JSX.Element {
         {/*
          <!--Page logo--> 
         */}
-        <link rel="icon" type="image/png" href="/images/svg/icon.svg" />
+        <link rel="icon" type="image/png" href="/HRnet-logo.svg" />
       </Head>
 
       <section className="home-page">
@@ -68,7 +69,7 @@ export default function Home(): JSX.Element {
         <h2 className="home-page__subtitle">Add employee</h2>
 
         <ModalWindow
-          content={<p>Dialog window test</p>}
+          content={<ModalContent />}
           isOpen={isOpen}
           setIsOpen={setIsOpen}
         />

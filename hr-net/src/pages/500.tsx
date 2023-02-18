@@ -22,7 +22,7 @@ export default function Error500(): JSX.Element {
           property="og:description"
           content="Oops, something went wrong. We apologize for the inconvenience and are working to fix the issue. Please try again later or contact us for assistance."
         />
-        <meta property="og:image" content="/images/svg/icon.svg" />
+        <meta property="og:image" content="/HRnet-logo.svg" />
 
         <meta property="og:url" content="www.hr-net.com/500" />
 
@@ -34,7 +34,7 @@ export default function Error500(): JSX.Element {
         {/*
          <!--Page logo--> 
         */}
-        <link rel="icon" type="image/png" href="/images/svg/icon.svg" />
+        <link rel="icon" type="image/png" href="/HRnet-logo.svg" />
 
         {/*     Canonical link     */}
 

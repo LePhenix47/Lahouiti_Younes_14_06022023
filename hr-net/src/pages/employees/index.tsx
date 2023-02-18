@@ -26,7 +26,7 @@ export default function Employees(): JSX.Element {
           property="og:description"
           content="Welcome to the Employees page of HRnet! Here, you can view and manage all of your company's employee records in one convenient location. From here, you can easily search for and view specific employee information"
         />
-        <meta property="og:image" content="/images/svg/icon.svg" />
+        <meta property="og:image" content="/HRnet-logo.svg" />
 
         <meta property="og:url" content="www.hr-net.com/employees" />
 
@@ -38,7 +38,7 @@ export default function Employees(): JSX.Element {
         {/*
          <!--Page logo--> 
         */}
-        <link rel="icon" type="image/png" href="/images/svg/icon.svg" />
+        <link rel="icon" type="image/png" href="/HRnet-logo.svg" />
       </Head>
 
       <section className="employees-page">Employees</section>

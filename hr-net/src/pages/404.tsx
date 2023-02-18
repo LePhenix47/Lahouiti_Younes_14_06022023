@@ -21,7 +21,7 @@ export default function Error404(): JSX.Element {
           property="og:description"
           content="Sorry, the page you were looking for is not available. Please try again or contact us for assistance."
         />
-        <meta property="og:image" content="/images/svg/icon.svg" />
+        <meta property="og:image" content="/HRnet-logo.svg" />
 
         <meta property="og:url" content="www.hr-net.com/404" />
 
@@ -33,7 +33,7 @@ export default function Error404(): JSX.Element {
         {/*
          <!--Page logo--> 
         */}
-        <link rel="icon" type="image/png" href="/images/svg/icon.svg" />
+        <link rel="icon" type="image/png" href="/HRnet-logo.svg" />
 
         {/*     Canonical link     */}
 
