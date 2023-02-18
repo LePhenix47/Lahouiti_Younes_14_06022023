@@ -7,6 +7,9 @@ import Head from "next/head";
 //Data table library
 //import { DataTable } from '@lephenix47/react-datatable';
 
+/**
+ * Home page: `/employees`
+ */
 export default function Employees(): JSX.Element {
   return (
     <>

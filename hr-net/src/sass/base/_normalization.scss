@@ -48,23 +48,21 @@ body {
 button {
     border-color: transparent;
     background-color: transparent;
+    font-family: inherit;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 
 input {
+    font-family: inherit;
     border-color: transparent;
 
     &:focus {
         border-color: transparent;
         outline: transparent;
-    }
-}
-
-button {
-    font-family: inherit;
-
-    &:hover {
-        cursor: pointer;
     }
 }
 
@@ -100,6 +98,7 @@ dialog {
 
 select {
     border: transparent;
+    font-family: inherit;
 }
 
 //Makes empty text blocks elements: disappear if they're empty

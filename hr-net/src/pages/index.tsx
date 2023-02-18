@@ -1,5 +1,5 @@
 //Next
-import { useState, useRef, use } from "react";
+import { useState, useRef } from "react";
 
 //Next
 import Head from "next/head";
@@ -14,7 +14,9 @@ import DatePicker from "@/components/DatePicker/DatePicker";
 import SelectDropdown from "@/components/SelectDropdown/SelectDropdown";
 import ModalWindow from "@/components/ModalWindow/ModalWindow";
 import ModalContent from "@/components/ModalContent/ModalContent";
+import { useDispatch } from "react-redux";
 
+//Redux
 /**
  * Home page: `/`
  */
@@ -49,26 +51,46 @@ export default function Home(): JSX.Element {
     setIsOpen(true);
   }
 
+  //
+  const dispatch = useDispatch();
+
+  /**
+   * Function that submits the values of the form
+   */
   function submitForm() {
     log("Submitting form");
     //@ts-ignore
-    const firstName = firstNameInputRef.current.value;
+    const firstName = firstNameInputRef?.current?.value;
     //@ts-ignore
-    const lastName = lastNameInputRef.current.value;
+    const lastName = lastNameInputRef?.current?.value;
     //@ts-ignore
-    const dateOfBirth = dateOfBirthInputRef.current.valueAsDate;
+    const dateOfBirth = dateOfBirthInputRef?.current?.valueAsDate;
     //@ts-ignore
-    const startDate = startDateInputRef.current.valueAsDate;
+    const startDate = startDateInputRef?.current?.valueAsDate;
     //@ts-ignore
-    const street = streetInputRef.current.value;
+    const street = streetInputRef?.current?.value;
     //@ts-ignore
-    const city = cityInputRef.current.value;
+    const city = cityInputRef?.current?.value;
     //@ts-ignore
-    const state = stateInputRef.current.value;
+    const state = stateInputRef?.current?.value;
     //@ts-ignore
-    const zipCode = zipCodeInputRef.current.value;
+    const zipCode = zipCodeInputRef?.current?.value;
     //@ts-ignore
-    const department = departmentInputRef.current.value;
+    const department = departmentInputRef?.current?.value;
+
+    const newEmployee = {
+      firstName,
+      lastName,
+      dateOfBirth,
+      startDate,
+      street,
+      city,
+      state,
+      zipCode,
+      department,
+    };
+
+    // Add the new employee with the useDispatch()
   }
 
   return (

@@ -7,6 +7,13 @@ import PageLayout from "../components/PageLayout/PageLayout";
 //SASS
 import "../sass/main.scss";
 
+//Redux
+//React-Redux
+import { Provider as ReduxProvider } from "react-redux";
+
+//Store
+import { store } from "../redux/store/store";
+
 /**
  * Root component where all the pages will pass through
  *
@@ -20,8 +27,10 @@ import "../sass/main.scss";
  */
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
   return (
-    <PageLayout>
-      <Component {...pageProps} />
-    </PageLayout>
+    <ReduxProvider store={store}>
+      <PageLayout>
+        <Component {...pageProps} />
+      </PageLayout>
+    </ReduxProvider>
   );
 }
