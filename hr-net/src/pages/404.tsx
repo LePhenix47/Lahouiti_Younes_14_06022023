@@ -12,14 +12,14 @@ export default function Error404(): JSX.Element {
         <meta name="robots" content="noindex, follow" />
         <meta
           name="description"
-          content="Welcome to the Employees page of HRnet! Here, you can view and manage all of your company's employee records in one convenient location. From here, you can easily search for and view specific employee information"
+          content="Sorry, the page you were looking for is not available. Please try again or contact us for assistance."
         />
 
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Home page" />
+        <meta property="og:title" content="Page not found" />
         <meta
           property="og:description"
-          content="Welcome to the Employees page of HRnet! Here, you can view and manage all of your company's employee records in one convenient location. From here, you can easily search for and view specific employee information"
+          content="Sorry, the page you were looking for is not available. Please try again or contact us for assistance."
         />
         <meta property="og:image" content="/images/svg/icon.svg" />
 
@@ -34,6 +34,10 @@ export default function Error404(): JSX.Element {
          <!--Page logo--> 
         */}
         <link rel="icon" type="image/png" href="/images/svg/icon.svg" />
+
+        {/*     Canonical link     */}
+
+        <link rel="canonical" href="https://www.hr-net.com/" />
       </Head>
       <section className="error-404">404</section>
     </>

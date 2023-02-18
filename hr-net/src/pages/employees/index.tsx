@@ -21,7 +21,7 @@ export default function Employees(): JSX.Element {
         />
 
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Home page" />
+        <meta property="og:title" content="Employees page" />
         <meta
           property="og:description"
           content="Welcome to the Employees page of HRnet! Here, you can view and manage all of your company's employee records in one convenient location. From here, you can easily search for and view specific employee information"
