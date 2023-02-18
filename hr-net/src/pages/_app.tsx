@@ -5,6 +5,7 @@ import type { AppProps } from "next/app";
 import PageLayout from "../components/PageLayout/PageLayout";
 
 //SASS
+import "../sass/main.scss";
 
 /**
  * Root component where all the pages will pass through

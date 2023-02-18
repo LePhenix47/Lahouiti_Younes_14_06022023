@@ -1,14 +1,37 @@
 /**
-
- *Function that prints out a message in the console but with a simpler syntax
+ * Console methods
  */
-export function log(...messages: any[]): void {
-  return console.log(messages);
-}
+export const {
+  log,
+  error,
+  table,
+  time,
+  timeEnd,
+  timeStamp,
+  timeLog,
+  assert,
+  clear,
+  count,
+  countReset,
+  group,
+  groupCollapsed,
+  groupEnd,
+  trace,
+  profile,
+  profileEnd,
+  warn,
+  debug,
+  info,
+  dir,
+  dirxml,
+} = console;
 
 /**
- *
  *Function that formats text in 3 cases: lowercase, uppercase and titlecase
+ *
+ * @param string
+ * @param option
+ * @returns
  */
 export function formatText(string: string, option: string): string | never {
   let formattedOption: string = option.toLowerCase().trim();
@@ -44,6 +67,9 @@ export function formatText(string: string, option: string): string | never {
 /**
  *Funtion that replaces letters with accents by their "non-accented" counter-part
  *ex: "crème brûlée" → "creme brulee"
+ *
+ * @param string
+ * @returns
  */
 export function normalizeString(string: string): string | undefined {
   if (typeof string !== "string") {
@@ -54,10 +80,13 @@ export function normalizeString(string: string): string | undefined {
     .normalize("NFD") //returns the unicode NORMALIZATION FORM of the string using a canonical DECOMPOSITION (NFD).
     .replace(/[\u0300-\u036f]/g, "");
 }
-
 /**
  *Splits a string on a character, word or regular expression
  *ex: Split on every space → "hello world" → ["hello", "world"]
+ *
+ * @param string
+ * @param character
+ * @returns
  */
 export function splitString(
   string: string,
@@ -69,6 +98,9 @@ export function splitString(
 /**
  *Split a string into an array separating each word with an uppercase on it
  *ex: "testColor" → ["test","Color"] → ["test", "color"] → "test-color"
+ *
+ * @param string
+ * @returns
  */
 export function splitOnUpperCase(string: string): string {
   //Regex for all the uppercase letters
@@ -91,6 +123,9 @@ export function splitOnUpperCase(string: string): string {
 
 /**
  *Retrieves the values of an object inside an array
+ *
+ * @param object
+ * @returns
  */
 export function getObjectValues(object: object): any[] {
   const objectIsDefined: boolean = !!object;
@@ -103,6 +138,9 @@ export function getObjectValues(object: object): any[] {
 
 /**
  *Retrieves the properties of an object inside an array
+ *
+ * @param object
+ * @returns
  */
 export function getObjectProperties(object: object): any[] {
   const objectIsDefined: boolean = !!object;
@@ -115,6 +153,9 @@ export function getObjectProperties(object: object): any[] {
 
 /**
  *Returns a string with a '%' in the end of the number inputted
+ *
+ * @param number
+ * @returns
  */
 export function toPercent(number: number): string {
   return number.toLocaleString(undefined, {
@@ -126,7 +167,7 @@ export function toPercent(number: number): string {
 /**
  *Formats a number by separating every thousand with a format from the user's locale
  *example:
-
+ 
  * - The user lives in Italy and we have:
  
  * `const number = 1_930 → returns "1.930"`
@@ -134,6 +175,10 @@ export function toPercent(number: number): string {
  * - If they lived in the US and we have:
  * 
  *`const number = 1_930 → returns "1,930"`
+ * 
+ * 
+ * @param number 
+ * @returns 
  */
 export function formatSignificantDigitsNumber(number: number): string {
   const formatter: Intl.NumberFormat = new Intl.NumberFormat(undefined, {
@@ -158,6 +203,10 @@ export function formatSignificantDigitsNumber(number: number): string {
  * - If the user lives in the US → `$24.00`
  *
  * - If the user lives in Italy → `24,00 USD`
+ *
+ * @param {number} number
+ * @param {string} currencyType
+ * @returns {string}
  */
 export function formatCurrencyValueNumber(
   number: number,

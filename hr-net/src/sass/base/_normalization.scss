@@ -61,6 +61,8 @@ input {
 }
 
 button {
+    font-family: inherit;
+
     &:hover {
         cursor: pointer;
     }
