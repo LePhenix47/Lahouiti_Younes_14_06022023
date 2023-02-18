@@ -1,4 +1,7 @@
 //Next
+import { useRef, useState } from "react";
+
+//Next
 import Head from "next/head";
 
 //Utils
@@ -11,7 +14,19 @@ import DatePicker from "@/components/DatePicker/DatePicker";
 import SelectDropdown from "@/components/SelectDropdown/SelectDropdown";
 import ModalWindow from "@/components/ModalWindow/ModalWindow";
 
+/**
+ * Home page: `/`
+ */
 export default function Home(): JSX.Element {
+  const [isOpen, setIsOpen] = useState(false);
+
+  /**
+   * Function that open the <dialog> element
+   */
+  function showModal() {
+    setIsOpen(true);
+  }
+
   return (
     <>
       <Head>
@@ -51,6 +66,12 @@ export default function Home(): JSX.Element {
         <h1 className="home-page__title">HRnet</h1>
 
         <h2 className="home-page__subtitle">Add employee</h2>
+
+        <ModalWindow
+          content={<p>Dialog window test</p>}
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+        />
 
         <form
           className="home-page__form"
@@ -128,7 +149,15 @@ export default function Home(): JSX.Element {
             <SelectDropdown options={departments} id="department" />
           </section>
 
-          <button type="submit">Save</button>
+          <button
+            type="submit"
+            onClick={() => {
+              showModal();
+            }}
+            className="home-page__save-button"
+          >
+            Save
+          </button>
         </form>
       </section>
     </>

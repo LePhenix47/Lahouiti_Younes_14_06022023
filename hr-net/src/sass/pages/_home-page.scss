@@ -1,1 +1,22 @@
 @use "../utils/" as *;
+
+.home-page {
+
+    &__title {}
+
+    &__subtitle {}
+
+    &__form-section {}
+
+
+    &__label {}
+
+    &__input {}
+
+
+    &__fieldset {}
+
+    &__legend {}
+
+    &__save-button {}
+}

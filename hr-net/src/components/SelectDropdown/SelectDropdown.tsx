@@ -1,19 +1,23 @@
 import React from "react";
 
+type SelectDropdownType = {
+  id: string;
+  options: any[];
+  object?: boolean | undefined;
+  propertyName?: string | undefined;
+  valueForOption?: string | undefined;
+};
+
 export default function SelectDropdown({
   id,
   options,
   object,
   propertyName,
   valueForOption,
-}: {
-  id: string;
-  options: any[];
-  object?: boolean | undefined;
-  propertyName?: string | undefined;
-  valueForOption?: string | undefined;
-}): JSX.Element {
+}: SelectDropdownType): JSX.Element {
+  //
   const isNormalArray: boolean | undefined = options && !object;
+  //
   const isArrayOfObjects: boolean | undefined = options && object;
   return (
     <select className="select-dropdown" id={id}>

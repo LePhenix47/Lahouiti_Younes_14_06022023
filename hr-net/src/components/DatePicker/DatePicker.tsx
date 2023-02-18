@@ -1,11 +1,17 @@
 import React from "react";
 
-export default function DatePicker({
-  name,
-  id,
-}: {
+type DatePickerType = {
   name: string;
   id: string;
-}): JSX.Element {
-  return <input type="date" name={name} id={id} />;
+};
+
+export default function DatePicker({ name, id }: DatePickerType): JSX.Element {
+  return (
+    <input
+      type="date"
+      name={name}
+      id={id}
+      className="home-page__input data-picker"
+    />
+  );
 }

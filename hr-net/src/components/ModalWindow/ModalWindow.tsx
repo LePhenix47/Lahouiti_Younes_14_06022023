@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+//React
+import React, { Dispatch, SetStateAction, useRef, useState } from "react";
 
 /**
  * Pop-up window
@@ -11,23 +12,35 @@ import React, { useState } from "react";
  *
  */
 export default function ModalWindow({
-  children,
+  content,
+  isOpen,
+  setIsOpen,
 }: {
-  children: JSX.Element;
+  content: JSX.Element;
+  isOpen: boolean;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
 }): JSX.Element {
-  const [isOpen, setIsOpen] = useState(false);
+  const dialogRef = useRef(null);
+
+  function closeModal() {
+    //@ts-ignore
+    dialogRef?.current?.close();
+    setIsOpen(false);
+  }
 
   return (
     //Because the "open" attribute doesn't
-    <dialog {...(isOpen && open)} className="modal-window">
+    <dialog className="modal-window" ref={dialogRef} open={isOpen}>
       <button
         className="modal-window__close-button"
         onClick={() => {
           //Add a function that create a transition when closing the window here:
-          setIsOpen(false);
+          closeModal();
         }}
-      ></button>
-      <div className="modal-window__content-wrapper">{children}</div>
+      >
+        Close
+      </button>
+      <div className="modal-window__content-wrapper">{content}</div>
     </dialog>
   );
 }
