@@ -1,6 +1,26 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+//Next
+import type { AppProps } from "next/app";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+//Components
+import PageLayout from "../components/PageLayout/PageLayout";
+
+//SASS
+
+/**
+ * Root component where all the pages will pass through
+ *
+ * This file should be changed *only if*:
+ *
+ * - You want to set a page layout
+ *
+ * - You want to add a provider for a global state (for React, Redux, TanStackQuery...)
+ *
+ * This file **must not** be nested inside a React Fragment
+ */
+export default function App({ Component, pageProps }: AppProps): JSX.Element {
+  return (
+    <PageLayout>
+      <Component {...pageProps} />
+    </PageLayout>
+  );
 }
