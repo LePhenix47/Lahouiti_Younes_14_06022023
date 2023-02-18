@@ -8,6 +8,10 @@
 
         --backdrop-bg-color: #{$backdrop-bg-color};
         --default-reset-bg-color: #{$default-reset-bg-color};
+
+        .footer__image {
+            filter: invert(100%) hue-rotate(180deg);
+        }
     }
 
     ::backdrop {
