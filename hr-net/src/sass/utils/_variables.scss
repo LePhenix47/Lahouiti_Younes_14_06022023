@@ -1,11 +1,13 @@
 //SASS variables
 $backdrop-bg-color: rgba(255, 255, 255, 0.5);
-$default-reset-bg-color: #949494;
+$header-bg-color: rgb(237, 237, 237);
+$footer-bg-color: rgb(202, 202, 202);
 
 //CSS Variables
 :root {
     --backdrop-bg-color: #{$backdrop-bg-color};
-    --default-reset-bg-color: #{$default-reset-bg-color};
+    --header-bg-color: #{$header-bg-color};
+    --footer-bg-color: #{$footer-bg-color};
 }
 
 ::backdrop {

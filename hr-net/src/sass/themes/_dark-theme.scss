@@ -1,13 +1,15 @@
 @media (prefers-color-scheme:dark) {
     //SASS variables
     $backdrop-bg-color: rgba(0, 0, 0, 0.5);
-    $default-reset-bg-color: #6b6b6b;
+    $header-bg-color: #121212;
+    $footer-bg-color: black;
 
     //CSS Variables
     :root {
 
         --backdrop-bg-color: #{$backdrop-bg-color};
-        --default-reset-bg-color: #{$default-reset-bg-color};
+        --header-bg-color: #{$header-bg-color};
+        --footer-bg-color: #{$footer-bg-color};
 
         .footer__image {
             filter: invert(100%) hue-rotate(180deg);

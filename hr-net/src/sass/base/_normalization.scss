@@ -101,6 +101,10 @@ select {
     font-family: inherit;
 }
 
+option {
+    font-family: inherit;
+}
+
 //Makes empty text blocks elements: disappear if they're empty
 :empty:is(p, h1, h2, h3, h4,
     h5, h6, span) {
