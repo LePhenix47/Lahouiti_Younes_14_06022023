@@ -26,24 +26,29 @@ export default function ModalWindow({
   //@ts-ignore
   const openedOnlyOnce: boolean = !dialogRef?.current?.attributes.open;
 
+  const [fadingClassAnimation, setFadingClassAnimation] = useState<string>("");
+
   function closeModal() {
     //@ts-ignore
     dialogRef?.current?.close();
+    setFadingClassAnimation("fade-out");
+    log("fading out");
     setIsOpen(false);
+    setFadingClassAnimation("");
   }
 
   if (isOpen && openedOnlyOnce) {
+    setFadingClassAnimation("fade-in");
     //@ts-ignore
     dialogRef?.current?.showModal();
   }
-
   return (
-    //Because the "open" attribute doesn't
-    <dialog className="modal-window" ref={dialogRef}>
+    <dialog className={`modal-window ${fadingClassAnimation}`} ref={dialogRef}>
       <button
         className="modal-window__close-button"
         onClick={() => {
           //Add a function that create a transition when closing the window here:
+          log({ fadingClassAnimation });
           closeModal();
         }}
       >

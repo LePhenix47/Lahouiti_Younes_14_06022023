@@ -1,11 +1,13 @@
 @use "../utils/" as *;
 
 .modal-window {
-    translate: -50% -50%;
-    inset: 50%;
+    @include absolute-center;
+
+    min-width: 50vw;
+    min-height: 30vh;
 
     &::backdrop {
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: var(--backdrop-bg-color);
     }
 
     &__close-button {}

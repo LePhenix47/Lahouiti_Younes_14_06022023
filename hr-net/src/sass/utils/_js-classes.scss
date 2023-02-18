@@ -1,0 +1,18 @@
+@use "../utils/" as *;
+
+.fade-in {
+    animation-name: fade-in;
+    animation-duration: 150ms;
+    animation-timing-function: ease-in-out;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+.fade-out {
+    //We play the animation in reverse
+    animation-name: fade-in;
+    animation-duration: 150ms;
+    animation-timing-function: ease-in-out;
+    animation-direction: reverse;
+    animation-fill-mode: forwards;
+}

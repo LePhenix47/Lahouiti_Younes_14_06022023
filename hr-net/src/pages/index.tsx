@@ -1,5 +1,5 @@
 //Next
-import { useState } from "react";
+import { useState, useRef, use } from "react";
 
 //Next
 import Head from "next/head";
@@ -19,13 +19,56 @@ import ModalContent from "@/components/ModalContent/ModalContent";
  * Home page: `/`
  */
 export default function Home(): JSX.Element {
-  const [isOpen, setIsOpen] = useState(false);
+  /**
+   * State to tell the `<ModalWindow />` component whether it should open or not
+   */
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const firstNameInputRef = useRef(null);
+
+  const lastNameInputRef = useRef(null);
+
+  const dateOfBirthInputRef = useRef(null);
+
+  const startDateInputRef = useRef(null);
+
+  const streetInputRef = useRef(null);
+
+  const cityInputRef = useRef(null);
+
+  const stateInputRef = useRef(null);
+
+  const zipCodeInputRef = useRef(null);
+
+  const departmentInputRef = useRef(null);
 
   /**
    * Function that open the <dialog> element
    */
   function showModal() {
     setIsOpen(true);
+  }
+
+  function submitForm() {
+    log("Submitting form");
+    //@ts-ignore
+    const firstName = firstNameInputRef.current.value;
+    //@ts-ignore
+    const lastName = lastNameInputRef.current.value;
+    //@ts-ignore
+    const dateOfBirth = dateOfBirthInputRef.current.valueAsDate;
+    //@ts-ignore
+    const startDate = startDateInputRef.current.valueAsDate;
+    //@ts-ignore
+    const street = streetInputRef.current.value;
+    //@ts-ignore
+    const city = cityInputRef.current.value;
+    //@ts-ignore
+    const state = stateInputRef.current.value;
+    //@ts-ignore
+    const zipCode = zipCodeInputRef.current.value;
+    //@ts-ignore
+    const department = departmentInputRef.current.value;
   }
 
   return (
@@ -84,14 +127,24 @@ export default function Home(): JSX.Element {
             <label htmlFor="first-name" className="home-page__label">
               First Name
             </label>
-            <input type="text" className="home-page__input" id="first-name" />
+            <input
+              type="text"
+              className="home-page__input"
+              id="first-name"
+              ref={firstNameInputRef}
+            />
           </section>
 
           <section className="home-page__form-section">
             <label htmlFor="last-name" className="home-page__label">
               Last Name
             </label>
-            <input type="text" className="home-page__input" id="last-name" />
+            <input
+              type="text"
+              className="home-page__input"
+              id="last-name"
+              ref={lastNameInputRef}
+            />
           </section>
 
           <section className="home-page__form-section">
@@ -115,12 +168,22 @@ export default function Home(): JSX.Element {
               <label htmlFor="street" className="home-page__label">
                 Street
               </label>
-              <input type="text" className="home-page__input" id="street" />
+              <input
+                type="text"
+                className="home-page__input"
+                id="street"
+                ref={streetInputRef}
+              />
 
               <label htmlFor="city" className="home-page__label">
                 City
               </label>
-              <input type="text" className="home-page__input" id="city" />
+              <input
+                type="text"
+                className="home-page__input"
+                id="city"
+                ref={cityInputRef}
+              />
 
               <label htmlFor="state" className="home-page__label">
                 State
@@ -133,12 +196,15 @@ export default function Home(): JSX.Element {
                 valueForOption="abbreviation"
               />
 
-              <input type="text" className="home-page__input" id="state" />
-
               <label htmlFor="zip-code" className="home-page__label">
                 ZipCode
               </label>
-              <input type="text" className="home-page__input" id="zip-code" />
+              <input
+                type="text"
+                className="home-page__input"
+                id="zip-code"
+                ref={zipCodeInputRef}
+              />
             </fieldset>
           </section>
 
@@ -153,6 +219,7 @@ export default function Home(): JSX.Element {
             type="submit"
             onClick={() => {
               showModal();
+              submitForm();
             }}
             className="home-page__save-button"
           >
