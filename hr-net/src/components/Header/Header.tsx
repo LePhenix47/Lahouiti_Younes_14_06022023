@@ -22,7 +22,7 @@ export default function Header(): JSX.Element {
             height={90}
             width={90}
           />
-          <p>
+          <p className="header__link-paragraph">
             <span className="header__link-brand">HRnet</span>: Connecting
             Talent. Empowering Teams.
           </p>
