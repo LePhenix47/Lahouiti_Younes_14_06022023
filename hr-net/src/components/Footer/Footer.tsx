@@ -22,7 +22,8 @@ export default function Footer(): JSX.Element {
       </div>
       <div className="footer__copyright-container">
         <small className="footer__copyright">
-          HRnet by Wealth Health, 2006-{currentYear} ©. All rights reserved.
+          HRnet by Wealth Health, 2006-{currentYear} © <br />
+          All rights reserved.
         </small>
       </div>
     </footer>

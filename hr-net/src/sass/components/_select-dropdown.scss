@@ -9,5 +9,9 @@
 
     background-color: var(--bg-color-secondary);
 
+    &:focus {
+        outline: 2px solid var(--logo-color)
+    }
+
     &__option {}
 }

@@ -16,3 +16,8 @@
     animation-direction: reverse;
     animation-fill-mode: forwards;
 }
+
+.active {
+    text-decoration: underline;
+    text-decoration-color: currentColor;
+}

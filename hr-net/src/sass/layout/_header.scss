@@ -6,6 +6,10 @@
     justify-content: space-between;
     align-items: center;
 
+    @include mobile-only {
+        flex-direction: column;
+    }
+
     background-color: var(--header-bg-color);
 
     border-bottom: 2px solid var(--logo-color);
@@ -27,6 +31,14 @@
         }
     }
 
+    &__image {
+        @include mobile-only {
+            height: 45px;
+            aspect-ratio: 1/1;
+        }
+    }
+
+
     &__navigation {
         flex: 0.5;
     }
@@ -34,13 +46,13 @@
     &__list {
         display: flex;
         gap: 35px;
+
+        @include mobile-only {
+            margin-bottom: 25px;
+        }
     }
 
     &__item {
-        &--active {
-            text-decoration: underline;
-            text-decoration-color: currentColor;
-        }
 
         &-link {}
     }

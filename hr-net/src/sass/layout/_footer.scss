@@ -16,18 +16,18 @@
 
     border-top: 2px solid var(--logo-color);
 
-    &__image-container {
-        flex: 1;
-    }
+    &__image-container {}
 
     &__image {}
 
-    &__copyright-container {
-        flex: 1;
+    &__copyright-container {}
+
+
+    &__copyright {
+        display: block;
+        width: 100%;
+        text-align: center;
     }
-
-
-    &__copyright {}
 
 
 }

@@ -22,7 +22,7 @@
 
         position: absolute;
         right: -15px;
-        top: -50%;
+        top: -5%;
 
         border: 2px solid var(--logo-color);
 
@@ -33,6 +33,8 @@
     }
 
     &__content-wrapper {
+        height: 30vh;
         position: relative;
+        @include center-flex-column;
     }
 }
