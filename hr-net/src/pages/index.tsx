@@ -83,7 +83,8 @@ export default function Home(): JSX.Element {
 
     if (dateOfBirthIsNotNull) {
       //@ts-ignore
-      dateOfBirth = dateOfBirthInputRef?.current?.valueAsDate.toISOString();
+      dateOfBirth =
+        dateOfBirthInputRef?.current?.valueAsDate.toLocaleDateString("en-GB");
     } else {
       dateOfBirth = "";
     }
@@ -95,7 +96,8 @@ export default function Home(): JSX.Element {
 
     if (startDateIsNotNull) {
       //@ts-ignore
-      startDate = startDateInputRef?.current?.valueAsDate.toISOString();
+      startDate =
+        startDateInputRef?.current?.valueAsDate.toLocaleDateString("en-GB");
     } else {
       startDate = "";
     }
