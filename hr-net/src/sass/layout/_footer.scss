@@ -1,5 +1,33 @@
 @use "../utils/" as *;
 
 .footer {
+    padding: 15px;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 15px;
+
+    @include mobile-only {
+        flex-direction: column;
+    }
+
     background-color: var(--footer-bg-color);
+
+    border-top: 2px solid var(--logo-color);
+
+    &__image-container {
+        flex: 1;
+    }
+
+    &__image {}
+
+    &__copyright-container {
+        flex: 1;
+    }
+
+
+    &__copyright {}
+
+
 }

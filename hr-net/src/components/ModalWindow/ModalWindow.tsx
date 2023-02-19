@@ -44,17 +44,19 @@ export default function ModalWindow({
   }
   return (
     <dialog className={`modal-window ${fadingClassAnimation}`} ref={dialogRef}>
-      <button
-        className="modal-window__close-button"
-        onClick={() => {
-          //Add a function that create a transition when closing the window here:
-          log({ fadingClassAnimation });
-          closeModal();
-        }}
-      >
-        Close
-      </button>
-      <div className="modal-window__content-wrapper">{content}</div>
+      <div className="modal-window__content-wrapper">
+        <button
+          className="modal-window__close-button"
+          onClick={() => {
+            //Add a function that create a transition when closing the window here:
+            log({ fadingClassAnimation });
+            closeModal();
+          }}
+        >
+          ✖
+        </button>
+        {content}
+      </div>
     </dialog>
   );
 }

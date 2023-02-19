@@ -1,22 +1,94 @@
 @use "../utils/" as *;
 
 .home-page {
+    min-height: 77vh;
+
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 20px;
+
+    background-color: var(--bg-color-primary);
+
 
     &__title {}
 
-    &__subtitle {}
 
-    &__form-section {}
+    &__subtitle {
+        text-decoration: underline;
+        text-decoration-color: var(--logo-color)
+    }
+
+
+    &__form {
+        @include grid(2, 2, 20px)
+    }
+
+
+    &__form-section {
+        @include center-flex-column(10px);
+
+        //Select all the children past 5
+        &:nth-child(n+5) {
+            grid-column: span 2;
+        }
+    }
 
 
     &__label {}
 
-    &__input {}
+
+    &__input {
+        background-color: var(--bg-color-secondary);
+
+        width: 100%;
+
+        padding: 2px 5px;
+
+        border-radius: 5px;
+
+        &:focus {
+            outline: 2px solid var(--logo-color)
+        }
+
+        &:is(:invalid) {
+            outline: 2px solid var(--invalid-color)
+        }
+    }
 
 
-    &__fieldset {}
+    &__fieldset {
+        @include center-flex-column(20px);
 
-    &__legend {}
+        width: 100%;
 
-    &__save-button {}
+        border: 2px solid var(--logo-color);
+        border-radius: 5px;
+
+
+        padding: 15px;
+    }
+
+
+    &__legend {
+        margin-left: 2%;
+    }
+
+
+    &__save-button {
+        margin-block: 20px;
+
+        padding: 5px;
+
+        border-radius: 5px;
+
+        width: 100%;
+
+        background-color: var(--logo-color);
+
+        color: var(--button-color);
+    }
 }

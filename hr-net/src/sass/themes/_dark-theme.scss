@@ -4,12 +4,39 @@
     $header-bg-color: #0c0c0c;
     $footer-bg-color: black;
 
+    $bg-color-primary: rgb(18, 18, 18);
+    $bg-color-secondary: rgb(59, 59, 59);
+
+    $logo-color: #548235;
+    $invalid-color: #ab0000;
+
+    $button-color: white;
+
+    $scrollbar-track-bg-color: black;
+    $scrollbar-thumb-bg-color: #ababab;
+    $scrollbar-thumb-bg-color--hover: #8a8a8a;
+    $scrollbar-thumb-bg-color--active: #4f4f4f;
+
     //CSS Variables
     :root {
 
         --backdrop-bg-color: #{$backdrop-bg-color};
         --header-bg-color: #{$header-bg-color};
         --footer-bg-color: #{$footer-bg-color};
+
+        --bg-color-primary: #{$bg-color-primary};
+        --bg-color-secondary: #{$bg-color-secondary};
+
+        --logo-color: #{$logo-color};
+        --invalid-color: #{$invalid-color};
+
+        --button-color: #{$button-color};
+
+        --scrollbar-track-bg-color:#{$scrollbar-track-bg-color};
+
+        --scrollbar-thumb-bg-color:#{$scrollbar-thumb-bg-color};
+        --scrollbar-thumb-bg-color--hover:#{$scrollbar-thumb-bg-color--hover};
+        --scrollbar-thumb-bg-color--active:#{$scrollbar-thumb-bg-color--active};
 
         .footer__image {
             filter: invert(100%) hue-rotate(180deg);

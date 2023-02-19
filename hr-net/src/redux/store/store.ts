@@ -26,6 +26,5 @@ export const store = configureStore({
     employees: employeesListSlice,
   },
 });
-log(employeesListSlice);
 
 // export const persistor = persistStore(store);

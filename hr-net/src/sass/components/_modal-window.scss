@@ -2,15 +2,37 @@
 
 .modal-window {
     @include absolute-center;
+    overflow: visible;
+
+    border-radius: 10px;
 
     min-width: 50vw;
     min-height: 30vh;
+
+    box-shadow: 0 0 10px var(--logo-color);
 
     &::backdrop {
         background-color: var(--backdrop-bg-color);
     }
 
-    &__close-button {}
+    &__close-button {
+        line-height: 11px;
 
-    &__content-wrapper {}
+        padding: 10px;
+
+        position: absolute;
+        right: -15px;
+        top: -50%;
+
+        border: 2px solid var(--logo-color);
+
+        border-radius: 50%;
+
+        background-color: var(--footer-bg-color);
+
+    }
+
+    &__content-wrapper {
+        position: relative;
+    }
 }

@@ -16,7 +16,7 @@ import ModalWindow from "@/components/ModalWindow/ModalWindow";
 import ModalContent from "@/components/ModalContent/ModalContent";
 
 //Redux
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addEmployee } from "@/redux/features/employees-list/employees-list.slice";
 
 /**
@@ -55,6 +55,13 @@ export default function Home(): JSX.Element {
   const dispatch = useDispatch();
 
   /**
+   * We get the employees
+   */
+  let test = useSelector((state: any) => {
+    return state.employees;
+  });
+  log({ test });
+  /**
    * Function that open the <dialog> element
    */
   function showModal() {
@@ -70,10 +77,29 @@ export default function Home(): JSX.Element {
     const firstName = firstNameInputRef?.current?.value;
     //@ts-ignore
     const lastName = lastNameInputRef?.current?.value;
+    let dateOfBirth;
     //@ts-ignore
-    const dateOfBirth = dateOfBirthInputRef?.current?.valueAsDate;
+    let dateOfBirthIsNotNull = !!dateOfBirthInputRef?.current?.valueAsDate;
+
+    if (dateOfBirthIsNotNull) {
+      //@ts-ignore
+      dateOfBirth = dateOfBirthInputRef?.current?.valueAsDate.toISOString();
+    } else {
+      dateOfBirth = "";
+    }
+
     //@ts-ignore
-    const startDate = startDateInputRef?.current?.valueAsDate;
+    let startDate;
+    //@ts-ignore
+    let startDateIsNotNull = !!startDateInputRef?.current?.valueAsDate;
+
+    if (startDateIsNotNull) {
+      //@ts-ignore
+      startDate = startDateInputRef?.current?.valueAsDate.toISOString();
+    } else {
+      startDate = "";
+    }
+
     //@ts-ignore
     const street = streetInputRef?.current?.value;
     //@ts-ignore
@@ -259,17 +285,18 @@ export default function Home(): JSX.Element {
               reference={departmentInputRef}
             />
           </section>
-
-          <button
-            type="submit"
-            onClick={() => {
-              showModal();
-              submitForm();
-            }}
-            className="home-page__save-button"
-          >
-            Save
-          </button>
+          <section className="home-page__form-section">
+            <button
+              type="submit"
+              onClick={() => {
+                showModal();
+                submitForm();
+              }}
+              className="home-page__save-button"
+            >
+              Save
+            </button>
+          </section>
         </form>
       </section>
     </>

@@ -3,11 +3,39 @@ $backdrop-bg-color: rgba(255, 255, 255, 0.5);
 $header-bg-color: rgb(237, 237, 237);
 $footer-bg-color: rgb(202, 202, 202);
 
+$bg-color-primary: rgb(255, 255, 255);
+$bg-color-secondary: rgb(225, 225, 225);
+
+$logo-color: #548235;
+$invalid-color: #ab0000;
+
+$button-color: white;
+
+$scrollbar-track-bg-color: white;
+$scrollbar-thumb-bg-color: #545454;
+$scrollbar-thumb-bg-color--hover: #757575;
+$scrollbar-thumb-bg-color--active: #b0b0b0;
+
 //CSS Variables
+
 :root {
     --backdrop-bg-color: #{$backdrop-bg-color};
     --header-bg-color: #{$header-bg-color};
     --footer-bg-color: #{$footer-bg-color};
+
+    --bg-color-primary: #{$bg-color-primary};
+    --bg-color-secondary: #{$bg-color-secondary};
+
+    --logo-color: #{$logo-color};
+    --invalid-color: #{$invalid-color};
+
+    --button-color: #{$button-color};
+
+    --scrollbar-track-bg-color:#{$scrollbar-track-bg-color};
+
+    --scrollbar-thumb-bg-color:#{$scrollbar-thumb-bg-color};
+    --scrollbar-thumb-bg-color--hover:#{$scrollbar-thumb-bg-color--hover};
+    --scrollbar-thumb-bg-color--active:#{$scrollbar-thumb-bg-color--active};
 }
 
 ::backdrop {

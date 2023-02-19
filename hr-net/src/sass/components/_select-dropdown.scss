@@ -1,6 +1,13 @@
 @use "../utils/" as *;
 
 .select-dropdown {
+    width: 100%;
+
+    padding: 5px;
+
+    border-radius: 5px;
+
+    background-color: var(--bg-color-secondary);
 
     &__option {}
 }
