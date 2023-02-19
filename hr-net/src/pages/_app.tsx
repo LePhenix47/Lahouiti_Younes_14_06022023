@@ -10,6 +10,7 @@ import "../sass/main.scss";
 //Redux
 //React-Redux
 import { Provider as ReduxProvider } from "react-redux";
+//Redux Persist
 
 //Store
 import { store } from "../redux/store/store";

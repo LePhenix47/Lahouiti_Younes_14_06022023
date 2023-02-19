@@ -2,6 +2,7 @@ import React from "react";
 
 type SelectDropdownType = {
   id: string;
+  reference: any;
   options: any[];
   object?: boolean | undefined;
   propertyName?: string | undefined;
@@ -10,6 +11,7 @@ type SelectDropdownType = {
 
 export default function SelectDropdown({
   id,
+  reference,
   options,
   object,
   propertyName,
@@ -20,7 +22,7 @@ export default function SelectDropdown({
   //
   const isArrayOfObjects: boolean | undefined = options && object;
   return (
-    <select className="select-dropdown" id={id}>
+    <select className="select-dropdown" id={id} ref={reference}>
       {isNormalArray &&
         options.map((value: string | number, index: number) => {
           return (

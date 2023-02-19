@@ -7,6 +7,9 @@
 
 import { createSlice } from "@reduxjs/toolkit";
 
+/**
+ *
+ */
 const employeesSlice = createSlice({
   name: "employees",
   initialState: {
@@ -19,6 +22,12 @@ const employeesSlice = createSlice({
   },
 });
 
+/**
+ * We export the actions
+ */
 export const { addEmployee } = employeesSlice.actions;
 
+/**
+ * We export the reducer
+ */
 export default employeesSlice.reducer;

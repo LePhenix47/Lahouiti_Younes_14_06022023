@@ -14,9 +14,11 @@ import DatePicker from "@/components/DatePicker/DatePicker";
 import SelectDropdown from "@/components/SelectDropdown/SelectDropdown";
 import ModalWindow from "@/components/ModalWindow/ModalWindow";
 import ModalContent from "@/components/ModalContent/ModalContent";
-import { useDispatch } from "react-redux";
 
 //Redux
+import { useDispatch } from "react-redux";
+import { addEmployee } from "@/redux/features/employees-list/employees-list.slice";
+
 /**
  * Home page: `/`
  */
@@ -26,6 +28,9 @@ export default function Home(): JSX.Element {
    */
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
+  /**
+   * Refs to get the values of the form
+   */
   const firstNameInputRef = useRef(null);
 
   const lastNameInputRef = useRef(null);
@@ -45,14 +50,16 @@ export default function Home(): JSX.Element {
   const departmentInputRef = useRef(null);
 
   /**
+   *
+   */
+  const dispatch = useDispatch();
+
+  /**
    * Function that open the <dialog> element
    */
   function showModal() {
     setIsOpen(true);
   }
-
-  //
-  const dispatch = useDispatch();
 
   /**
    * Function that submits the values of the form
@@ -90,7 +97,10 @@ export default function Home(): JSX.Element {
       department,
     };
 
-    // Add the new employee with the useDispatch()
+    log({ newEmployee });
+
+    //@ts-ignore
+    dispatch(addEmployee(newEmployee));
   }
 
   return (
@@ -173,14 +183,22 @@ export default function Home(): JSX.Element {
             <label htmlFor="date-of-birth" className="home-page__label">
               Date of Birth
             </label>
-            <DatePicker name="date-of-birth" id="date-of-birth" />
+            <DatePicker
+              name="date-of-birth"
+              id="date-of-birth"
+              reference={dateOfBirthInputRef}
+            />
           </section>
 
           <section className="home-page__form-section">
             <label htmlFor="start-date" className="home-page__label">
               Start Date
             </label>
-            <DatePicker name="start-date" id="start-date" />
+            <DatePicker
+              name="start-date"
+              id="start-date"
+              reference={startDateInputRef}
+            />
           </section>
 
           <section className="home-page__form-section">
@@ -216,6 +234,7 @@ export default function Home(): JSX.Element {
                 object
                 propertyName="name"
                 valueForOption="abbreviation"
+                reference={stateInputRef}
               />
 
               <label htmlFor="zip-code" className="home-page__label">
@@ -234,7 +253,11 @@ export default function Home(): JSX.Element {
             <label htmlFor="department" className="home-page__label">
               Department
             </label>
-            <SelectDropdown options={departments} id="department" />
+            <SelectDropdown
+              options={departments}
+              id="department"
+              reference={departmentInputRef}
+            />
           </section>
 
           <button
