@@ -24,6 +24,7 @@
 
         @include mobile-only {
             flex-direction: column;
+            gap: 15px;
         }
     }
 
@@ -43,6 +44,7 @@
 
             @include mobile-only {
                 border-bottom: 2px solid currentColor !important;
+                margin-bottom: 0px;
             }
         }
 
