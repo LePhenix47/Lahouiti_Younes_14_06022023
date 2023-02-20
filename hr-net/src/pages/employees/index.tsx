@@ -1,18 +1,25 @@
 //React
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 //Next
 import Head from "next/head";
+import dynamic from "next/dynamic";
+
+//Redux
+import { useDispatch, useSelector } from "react-redux";
+import { addEmployee } from "@/redux/features/employees-list/employees-list.slice";
+
+//Utils
+import { log } from "@/react-utils/functions/helper-functions";
+import { WebStorageService } from "@/react-utils/services/web-storage.service";
 
 //Data table library
-//import { DataTable } from '@lephenix47/react-datatable';
-
-import dynamic from "next/dynamic";
-import { useSelector } from "react-redux";
-import { log } from "@/react-utils/functions/helper-functions";
-
+/**
+ * We import the component dynamically
+ */
 const HydratedDataTable = dynamic(
   () =>
+    //@ts-ignore
     import("@lephenix47/react-datatable").then((module) => module.DataTable),
   { ssr: false }
 );
@@ -21,13 +28,26 @@ const HydratedDataTable = dynamic(
  * Home page: `/employees`
  */
 export default function Employees(): JSX.Element {
-  const data = useSelector((state: any) => {
+  let data = useSelector((state: any) => {
     return state.employees;
   });
 
   log(data.list);
 
-  const { list } = data;
+  let { list } = data;
+
+  const [employeesList, setEmployeesList] = useState<any[]>([]);
+
+  /**
+   *
+   */
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const savedEmployeeList = WebStorageService.getKey("employees") || [];
+    // dispatch(addEmployee(savedEmployeeList));
+    setEmployeesList(savedEmployeeList);
+  }, []);
 
   return (
     <>
@@ -54,7 +74,7 @@ export default function Employees(): JSX.Element {
         {/*
          <!--Title--> 
          */}
-        <title>Home page</title>
+        <title>Employees page</title>
 
         {/*
          <!--Page logo--> 
@@ -63,8 +83,14 @@ export default function Employees(): JSX.Element {
       </Head>
 
       <section className="employees-page">
-        <HydratedDataTable data={list} paging sort filter info />
-        {/* <HydratedDataTable data={list} scroll height={200} sort filter info /> */}
+        <h1 className="employees-page__title">Current employees</h1>
+        <HydratedDataTable //@ts-ignore
+          data={employeesList}
+          paging
+          sort
+          filter
+          info
+        />
       </section>
     </>
   );

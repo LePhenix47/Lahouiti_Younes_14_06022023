@@ -1,3 +1,154 @@
 @use "../utils/" as *;
 
-.DataTable {}
+.DataTable {
+    border-collapse: separate !important;
+    width: 95% !important;
+    margin: auto auto 50px auto;
+
+    border-radius: 10px;
+    outline: 2px solid var(--logo-color);
+    border: transparent;
+
+    &__container {
+        margin: auto;
+    }
+
+
+    &__row {
+        border: transparent !important;
+    }
+
+
+    &__entries-query-container {
+        margin: 10px;
+
+        @include mobile-only {
+            flex-direction: column;
+        }
+    }
+
+    &__head {
+
+        &-button {
+            @include table-button-styling;
+            color: white;
+
+            &--active {
+                color: var(--logo-color) !important;
+            }
+        }
+
+        &-row {
+            margin-bottom: 5px;
+
+            @include mobile-only {
+                border-bottom: 2px solid currentColor !important;
+            }
+        }
+
+        &-cell {
+            @include text-ellipsis-effect;
+        }
+    }
+
+    &__buttons-container {
+        padding: 10px 0 15px 0;
+        border-bottom: 1px solid currentColor;
+
+        @include mobile-only {
+            border-bottom: transparent;
+            flex-direction: column !important;
+        }
+
+        flex-direction: row !important;
+    }
+
+    &__foot {
+
+        &-row {
+            border-top: 1px solid currentColor !important;
+            padding: 0 15px;
+        }
+    }
+
+    &__body {
+        --bg-even-odd: #54823524;
+
+        &-row {
+            height: 65px;
+
+            @include mobile-only {
+                height: auto;
+                padding: 15px 0;
+            }
+
+            &:nth-child(2n+1) {
+                background-color: var(--bg-even-odd);
+            }
+        }
+
+        &-cell {
+            padding: 0 20px;
+            @include text-ellipsis-effect;
+        }
+    }
+}
+
+.ShowEntries {
+
+    &__select {
+        @include input-styling;
+        width: auto;
+    }
+}
+
+.QuerySearch {
+    &__input {
+        @include input-styling;
+
+        &:empty {}
+    }
+
+    &__reset-button {
+
+        line-height: 9px;
+        top: 23px !important;
+        right: 5px !important;
+        height: 20px;
+        aspect-ratio: 1/1;
+        background-color: transparent !important;
+    }
+}
+
+.EntriesIndex {}
+
+.PaginationIndex {
+    gap: 5px !important;
+
+    &__button {
+        @include table-button-styling;
+        padding: 5px !important;
+
+        &--active {
+            border: 2px solid var(--logo-color) !important;
+        }
+    }
+
+    &__previous {
+        @include table-button-styling;
+
+        @include mobile-only {
+            width: 75px;
+            padding: 4px 6px !important;
+        }
+    }
+
+    &__next {
+        @include table-button-styling;
+
+        @include mobile-only {
+            width: 75px;
+            padding: 4px 6px !important;
+        }
+    }
+}

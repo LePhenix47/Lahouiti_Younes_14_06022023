@@ -56,8 +56,49 @@
     gap: $gap;
 }
 
-
+//Mixin to center in the middle
 @mixin absolute-center {
     translate: -50% -50%;
     inset: 50%;
+}
+
+//Mixin for the styling of inputs
+@mixin input-styling {
+    width: 100%;
+    padding: 2px 5px;
+    border-radius: 5px;
+    background-color: var(--bg-color-secondary);
+}
+
+//Mixin to style the buttons inside the table
+@mixin table-button-styling {
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    background-color: var(--default-input-bg-color);
+
+    border-radius: 8px;
+    border: 2px solid transparent;
+
+    padding: 4px 6px;
+
+
+    font-size: 16px;
+    font-weight: 500;
+
+    transition: border-color 0.25s;
+    font-family: inherit;
+
+    @include mobile-only {
+        padding: 8px 16px;
+    }
+}
+
+//
+@mixin text-ellipsis-effect {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }

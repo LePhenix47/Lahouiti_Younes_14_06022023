@@ -42,13 +42,7 @@
 
 
     &__input {
-        background-color: var(--bg-color-secondary);
-
-        width: 100%;
-
-        padding: 2px 5px;
-
-        border-radius: 5px;
+        @include input-styling;
 
         &:focus {
             outline: 2px solid var(--logo-color)

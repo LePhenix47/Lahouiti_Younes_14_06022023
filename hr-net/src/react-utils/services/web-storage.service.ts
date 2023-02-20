@@ -34,7 +34,7 @@ export class WebStorageService {
    *
    * @param {string} key - The key used for storing the value.
    * @param {boolean} [inSession=false] - A flag indicating whether to look for the value in the session storage or not.
-   * @returns {*} The value retrieved from the storage, or null if the key is not found.
+   * @returns {* | null} The value retrieved from the storage, or null if the key is not found.
    */
   static getKey(key: string, inSession: boolean = false): any {
     // If the user stored the pair inside the session storage
@@ -96,7 +96,10 @@ export class WebStorageService {
    * @param {boolean} [inSession=false] - A flag indicating whether to get the key from the session storage or not.
    * @returns {(string | null)} The key at the
    * */
-  static key(index: number, inSession: boolean = false): string | null {
+  static getKeyByIndex(
+    index: number,
+    inSession: boolean = false
+  ): string | null {
     // If the user wants to get the key from the session storage
     const storage = inSession ? sessionStorage : localStorage;
     return storage.key(index);

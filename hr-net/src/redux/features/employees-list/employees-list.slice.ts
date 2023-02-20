@@ -7,9 +7,12 @@
 
 import { createSlice } from "@reduxjs/toolkit";
 
+import { WebStorageService } from "@/react-utils/services/web-storage.service";
+
 /**
  *
  */
+
 const employeesSlice = createSlice({
   name: "employees",
   initialState: {
@@ -18,6 +21,9 @@ const employeesSlice = createSlice({
   reducers: {
     addEmployee: (state: any, action: any) => {
       state.list.push(action.payload);
+
+      let oldList = WebStorageService.getKey("employees") || [];
+      WebStorageService.setKey("employees", [...oldList, action.payload]);
     },
   },
 });

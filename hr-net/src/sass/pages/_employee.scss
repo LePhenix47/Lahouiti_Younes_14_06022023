@@ -1,5 +1,19 @@
 @use "../utils/" as *;
 
 .employees-page {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+
+
+    background-color: var(--bg-color-primary);
+
     min-height: 77.5vh;
+
+    &__title {
+        margin-top: 25px;
+    }
+
 }

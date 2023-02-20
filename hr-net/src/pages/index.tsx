@@ -1,5 +1,5 @@
 //Next
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 //Next
 import Head from "next/head";
@@ -18,6 +18,7 @@ import ModalContent from "@/components/ModalContent/ModalContent";
 //Redux
 import { useDispatch, useSelector } from "react-redux";
 import { addEmployee } from "@/redux/features/employees-list/employees-list.slice";
+import { WebStorageService } from "@/react-utils/services/web-storage.service";
 
 /**
  * Home page: `/`
@@ -74,16 +75,16 @@ export default function Home(): JSX.Element {
   function submitForm() {
     log("Submitting form");
     //@ts-ignore
-    const firstName = firstNameInputRef?.current?.value;
+    const firstName = firstNameInputRef?.current?.value.trim();
     //@ts-ignore
-    const lastName = lastNameInputRef?.current?.value;
+    const lastName = lastNameInputRef?.current?.value.trim();
     let dateOfBirth;
     //@ts-ignore
     let dateOfBirthIsNotNull = !!dateOfBirthInputRef?.current?.valueAsDate;
 
     if (dateOfBirthIsNotNull) {
-      //@ts-ignore
       dateOfBirth =
+        //@ts-ignore
         dateOfBirthInputRef?.current?.valueAsDate.toLocaleDateString("en-GB");
     } else {
       dateOfBirth = "";
@@ -95,23 +96,23 @@ export default function Home(): JSX.Element {
     let startDateIsNotNull = !!startDateInputRef?.current?.valueAsDate;
 
     if (startDateIsNotNull) {
-      //@ts-ignore
       startDate =
+        //@ts-ignore
         startDateInputRef?.current?.valueAsDate.toLocaleDateString("en-GB");
     } else {
       startDate = "";
     }
 
     //@ts-ignore
-    const street = streetInputRef?.current?.value;
+    const street = streetInputRef?.current?.value.trim();
     //@ts-ignore
-    const city = cityInputRef?.current?.value;
+    const city = cityInputRef?.current?.value.trim();
     //@ts-ignore
-    const state = stateInputRef?.current?.value;
+    const state = stateInputRef?.current?.value.trim();
     //@ts-ignore
-    const zipCode = zipCodeInputRef?.current?.value;
+    const zipCode = zipCodeInputRef?.current?.value.trim();
     //@ts-ignore
-    const department = departmentInputRef?.current?.value;
+    const department = departmentInputRef?.current?.value.trim();
 
     const newEmployee = {
       firstName,
@@ -130,6 +131,10 @@ export default function Home(): JSX.Element {
     //@ts-ignore
     dispatch(addEmployee(newEmployee));
   }
+
+  useEffect(() => {
+    const currentEmployeeList = WebStorageService.getKey("employees");
+  }, []);
 
   return (
     <>
