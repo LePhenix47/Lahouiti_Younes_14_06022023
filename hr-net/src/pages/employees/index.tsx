@@ -86,14 +86,16 @@ export default function Employees(): JSX.Element {
 
       <section className="employees-page">
         <h1 className="employees-page__title">Current employees</h1>
-        <HydratedDataTable //@ts-ignore
+        <HydratedDataTable
+          //@ts-ignore
           data={dataMock}
           paging
           sort
           filter
           info
         />
-        {/* <HydratedDataTable //@ts-ignore
+        {/* <HydratedDataTable 
+          //@ts-ignore
           data={dataMock}
           scroll
           height={1_000}
