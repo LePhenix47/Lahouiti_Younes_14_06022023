@@ -11,7 +11,7 @@ HRnet is an excellent software tool that has been specially designed to cater to
  1.4 [Launching the project](#14-launching-the-project)<br>
  1.5 [Other commands](#15-other-commands)<br>
 
-2s. [Miscellaneous](#3-miscellaneous) <br>
+2. [Miscellaneous](#3-miscellaneous) <br>
    2.1 [Folder-app structure](#31-folder-app-structure) <br>
    2.2 [Naming conventions](#32-naming-conventions) <br>
    2.3 [Trivial information](#33-trivial-information) <br>
