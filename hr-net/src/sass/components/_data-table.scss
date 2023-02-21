@@ -145,6 +145,17 @@
         }
     }
 
+    &__first-row-buttons-container {
+        display: flex;
+        gap: 5px !important;
+    }
+
+    &__mid-buttons-container {
+        display: flex;
+        gap: 5px !important;
+
+    }
+
     &__next {
         @include table-button-styling;
 

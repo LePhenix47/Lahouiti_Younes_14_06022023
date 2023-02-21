@@ -90,6 +90,7 @@ export default function Employees(): JSX.Element {
           sort
           filter
           info
+          lengthMenu={[1, 2, 3]}
         />
       </section>
     </>
