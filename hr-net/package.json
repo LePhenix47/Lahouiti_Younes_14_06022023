@@ -10,7 +10,7 @@
     "test": "jest --coverage --noStackTrace --silent"
   },
   "dependencies": {
-    "@lephenix47/react-datatable": "^1.0.22",
+    "@lephenix47/react-datatable": "^1.0.26",
     "@next/font": "13.1.6",
     "@reduxjs/toolkit": "^1.9.2",
     "@types/node": "18.11.19",
