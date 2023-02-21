@@ -61,7 +61,6 @@ export default function Home(): JSX.Element {
   let test = useSelector((state: any) => {
     return state.employees;
   });
-  log({ test });
   /**
    * Function that open the <dialog> element
    */
@@ -73,7 +72,6 @@ export default function Home(): JSX.Element {
    * Function that submits the values of the form
    */
   function submitForm() {
-    log("Submitting form");
     //@ts-ignore
     const firstName = firstNameInputRef?.current?.value.trim();
     //@ts-ignore
