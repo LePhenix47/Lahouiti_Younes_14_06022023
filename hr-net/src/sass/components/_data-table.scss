@@ -66,10 +66,17 @@
     }
 
     &__foot {
+        @include mobile-only {
+            height: 250px !important;
+        }
 
         &-row {
             border-top: 1px solid currentColor !important;
             padding: 0 15px;
+
+            @include mobile-only {
+                padding-bottom: 15px;
+            }
         }
     }
 
@@ -126,6 +133,10 @@
 
 .PaginationIndex {
     gap: 5px !important;
+
+    @include mobile-only {
+        flex-direction: column !important;
+    }
 
     &__button {
         @include table-button-styling;
