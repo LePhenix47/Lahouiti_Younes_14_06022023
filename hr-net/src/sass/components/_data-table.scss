@@ -3,14 +3,14 @@
 .DataTable {
     border-collapse: separate !important;
     width: 95% !important;
-    margin: auto auto 50px auto;
+    margin: auto;
 
     border-radius: 10px;
     outline: 2px solid var(--logo-color);
     border: transparent;
 
     &__container {
-        margin: auto;
+        margin-bottom: 50px;
     }
 
 

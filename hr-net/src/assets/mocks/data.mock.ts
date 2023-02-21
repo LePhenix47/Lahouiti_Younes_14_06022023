@@ -10,6 +10,9 @@ type dataMockType = {
   zipCode: string;
 }[];
 
+/**
+ * Mocked data for the list of employees page
+ */
 export const dataMock: dataMockType = [
   {
     firstName: "Younes",

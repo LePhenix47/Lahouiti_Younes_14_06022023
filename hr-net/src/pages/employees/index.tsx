@@ -13,6 +13,9 @@ import { addEmployee } from "@/redux/features/employees-list/employees-list.slic
 import { log } from "@/react-utils/functions/helper-functions";
 import { WebStorageService } from "@/react-utils/services/web-storage.service";
 
+//Assets
+import { dataMock } from "@/assets/mocks/data.mock";
+
 //Data table library
 /**
  * We import the component dynamically
@@ -85,12 +88,13 @@ export default function Employees(): JSX.Element {
       <section className="employees-page">
         <h1 className="employees-page__title">Current employees</h1>
         <HydratedDataTable //@ts-ignore
-          data={employeesList}
+          data={dataMock}
           paging
+          // scroll
+          // height={1_000}
           sort
           filter
           info
-          lengthMenu={[1, 2, 3]}
         />
       </section>
     </>
