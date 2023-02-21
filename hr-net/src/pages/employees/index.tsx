@@ -31,24 +31,23 @@ const HydratedDataTable = dynamic(
  * Home page: `/employees`
  */
 export default function Employees(): JSX.Element {
+  /**
+   * Hook to dispatch an action
+   */
+  const dispatch = useDispatch();
+  /**
+   * Data store in the Redux state
+   */
   let data = useSelector((state: any) => {
     return state.employees;
   });
-
-  log(data.list);
 
   let { list } = data;
 
   const [employeesList, setEmployeesList] = useState<any[]>([]);
 
-  /**
-   *
-   */
-  const dispatch = useDispatch();
-
   useEffect(() => {
     const savedEmployeeList = WebStorageService.getKey("employees") || [];
-    // dispatch(addEmployee(savedEmployeeList));
     setEmployeesList(savedEmployeeList);
   }, []);
 
@@ -90,12 +89,18 @@ export default function Employees(): JSX.Element {
         <HydratedDataTable //@ts-ignore
           data={dataMock}
           paging
-          // scroll
-          // height={1_000}
           sort
           filter
           info
         />
+        {/* <HydratedDataTable //@ts-ignore
+          data={dataMock}
+          scroll
+          height={1_000}
+          sort
+          filter
+          info
+        /> */}
       </section>
     </>
   );
