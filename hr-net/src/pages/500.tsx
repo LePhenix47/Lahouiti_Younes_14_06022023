@@ -31,11 +31,6 @@ export default function Error500(): JSX.Element {
          */}
         <title>Internal Server Error - HRnet</title>
 
-        {/*
-         <!--Page logo--> 
-        */}
-        <link rel="icon" type="image/png" href="/HRnet-logo.svg" />
-
         {/*     Canonical link     */}
 
         <link rel="canonical" href="https://www.hr-net.com/" />

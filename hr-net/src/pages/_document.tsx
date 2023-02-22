@@ -18,7 +18,12 @@ export default function Document(): JSX.Element {
         {/*
          <!--Page logo--> 
         */}
-        <link rel="icon" type="image/png" href="/images/svg/icon.svg" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/HRnet-logo.svg"
+        />
 
         {/* Icons     */}
         <script

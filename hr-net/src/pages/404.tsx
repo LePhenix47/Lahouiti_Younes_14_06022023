@@ -30,11 +30,6 @@ export default function Error404(): JSX.Element {
          */}
         <title>Page not found</title>
 
-        {/*
-         <!--Page logo--> 
-        */}
-        <link rel="icon" type="image/png" href="/HRnet-logo.svg" />
-
         {/*     Canonical link     */}
 
         <link rel="canonical" href="https://www.hr-net.com/" />

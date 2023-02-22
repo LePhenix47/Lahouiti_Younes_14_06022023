@@ -77,11 +77,6 @@ export default function Employees(): JSX.Element {
          <!--Title--> 
          */}
         <title>Employees page</title>
-
-        {/*
-         <!--Page logo--> 
-        */}
-        <link rel="icon" type="image/png" href="/HRnet-logo.svg" />
       </Head>
 
       <section className="employees-page">

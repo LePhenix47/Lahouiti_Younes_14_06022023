@@ -162,11 +162,6 @@ export default function Home(): JSX.Element {
          <!--Title--> 
          */}
         <title>Home page</title>
-
-        {/*
-         <!--Page logo--> 
-        */}
-        <link rel="icon" type="image/png" href="/HRnet-logo.svg" />
       </Head>
 
       <ModalWindow
