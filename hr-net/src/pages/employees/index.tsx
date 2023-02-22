@@ -87,15 +87,6 @@ export default function Employees(): JSX.Element {
           filter
           info
         />
-        {/* <HydratedDataTable 
-          //@ts-ignore
-          data={dataMock}
-          scroll
-          height={1_000}
-          sort
-          filter
-          info
-        /> */}
       </section>
     </>
   );
