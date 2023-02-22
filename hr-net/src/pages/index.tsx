@@ -154,7 +154,7 @@ export default function Home(): JSX.Element {
           content="HRnet is a web-based human resources management application designed for a company's internal use. The application serves as a central repository to manage employee records and information, providing HR professionals with easy access to important data related to their employees. 
           The platform is built to streamline HR operations and optimize the employee experience by centralizing all employee data in one location."
         />
-        <meta property="og:image" content="/images/svg/icon.svg" />
+        <meta property="og:image" content="/HRnet-logo.svg" />
 
         <meta property="og:url" content="www.hr-net.com" />
 
