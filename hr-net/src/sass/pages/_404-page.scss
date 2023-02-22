@@ -1,1 +1,18 @@
 @use "../utils/" as *;
+
+.error-404 {
+    @include center-flex-column(25px);
+    min-height: 77.5vh;
+
+    &__title {
+        text-align: center;
+    }
+
+    &__subtitle {
+        text-align: center;
+    }
+
+    &__paragraph {
+        text-align: center;
+    }
+}

@@ -40,7 +40,19 @@ export default function Error500(): JSX.Element {
 
         <link rel="canonical" href="https://www.hr-net.com/" />
       </Head>
-      <section className="error-500">500</section>
+      <section className="error-500">
+        <h1 className="error-500__title">Sorry… ಠ_ಠ</h1>
+        <h2 className="error-500__subtitle">
+          It looks like our servers are experiencing a bit of a meltdown right
+          now.
+        </h2>
+        <p className="error-500__paragraph">
+          Snap! It seems that our HR department couldn&apos;t handle all the
+          workplace drama and the server just imploded, no worries we&apos;re
+          currently trying to mediate the conflict between two employees who
+          both want to use the same stapler.
+        </p>
+      </section>
     </>
   );
 }

@@ -39,7 +39,17 @@ export default function Error404(): JSX.Element {
 
         <link rel="canonical" href="https://www.hr-net.com/" />
       </Head>
-      <section className="error-404">404</section>
+      <section className="error-404">
+        <h1 className="error-404__title">Well… ¯\_(ツ)_/¯</h1>
+        <h2 className="error-404__subtitle">
+          It looks like you&apos;ve stumbled upon a missing page buddy.
+        </h2>
+        <p className="error-404__paragraph">
+          Our HR team is probably just taking a break and will be back to work
+          on this issue soon. In the meantime, you can try navigating back to
+          the homepage or contact our support team for assistance.
+        </p>
+      </section>
     </>
   );
 }
