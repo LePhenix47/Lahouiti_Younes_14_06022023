@@ -7,10 +7,8 @@ import dynamic from "next/dynamic";
 
 //Redux
 import { useDispatch, useSelector } from "react-redux";
-import { addEmployee } from "@/redux/features/employees-list/employees-list.slice";
 
 //Utils
-import { log } from "@/react-utils/functions/helper-functions";
 import { WebStorageService } from "@/react-utils/services/web-storage.service";
 
 //Assets
