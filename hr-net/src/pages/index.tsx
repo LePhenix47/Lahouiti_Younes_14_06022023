@@ -270,6 +270,8 @@ export default function Home(): JSX.Element {
                 type="text"
                 className="home-page__input"
                 id="zip-code"
+                inputMode="numeric"
+                pattern="\d*"
                 ref={zipCodeInputRef}
               />
             </fieldset>
